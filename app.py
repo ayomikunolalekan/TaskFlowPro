@@ -1,6 +1,7 @@
-from flask import Flask, render_template
+from flask import Flask, render_template,request
 from flask_sqlalchemy import SQLAlchemy
 import datetime
+
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///taskflopro.db"
@@ -37,17 +38,31 @@ with app.app_context():
             self.user_id = user_id
 
     db.create_all()
-        
+
 @app.route("/")
 def homepage():
     return render_template("home.html")
 
-@app.route("/login")
+@app.route("/login", methods=["Get","Post"])
 def login_page():
     return render_template("log_in.html")
 
-@app.route("/signup")
+@app.route("/signup", methods=["GET","POST"])
 def signup_page():
+    if request.method == "POST":
+        email = request.form.get('email')
+        first_name = request.form.get('firstName')
+        last_name = request.form.get('lastName')
+        password = request.form.get('password')
+        confirm_password=request.form.get('confirmPassword')
+        user = User(
+            first_name=first_name,
+            last_name=last_name,
+            email=email,
+            password=password,
+        )
+        db.session.add(user)
+        db.session.commit()
     return render_template("sign_up.html")
 
 @app.route("/dashboard")
