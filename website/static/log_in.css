@@ -94,5 +94,8 @@ input[type="submit"] {
 
 .open span:hover {
   text-decoration: none; 
+  transition: 0.5s;
+  background: #3498db;
+  color: black;
 }
 
