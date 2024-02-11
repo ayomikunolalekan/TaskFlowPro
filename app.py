@@ -67,6 +67,9 @@ def signup_page():
 
 @app.route("/dashboard")
 def dashboard_page():
+    #add task
+    #remove task
+    #
     return render_template("dashboard.html")
 
 if __name__ == "__main__":
