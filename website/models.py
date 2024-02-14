@@ -1,9 +1,10 @@
-import datetime
+from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin
+from . import db
+# from sqlalchemy.sql import func
 
 
-db = SQLAlchemy()  
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key= True)
@@ -23,14 +24,12 @@ class User(db.Model, UserMixin):
 class Task(db.Model):
     id = db.Column(db.Integer, primary_key= True)
     title = db.Column(db.String(100), nullable= False)
-    start = db.Column(db.DateTime, nullable= False, default=datetime.datetime.now())
-    end = db.Column(db.DateTime, nullable= False)
-    status = db.Column(db.String(100), nullable= False)
+    end = db.Column(db.String, nullable= False)
+    start = db.Column(db.DateTime, nullable= False, default=datetime.now())
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable= False)
 
-    def __init__(self, title,start,end,status,user_id):
+    def __init__(self, title,end, status, user_id):
         self.title = title
-        self.start = start
         self.end = end
         self.status = status
         self.user_id = user_id

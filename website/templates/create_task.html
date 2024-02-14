@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Task form</title>
+    <link rel="stylesheet" href="{{ url_for('static',  filename='css/create_task.css') }}">
+  </head>
+  <body>
+    <!-- {% with messages = get_flashed_messages(with_categories = true)%}
+      {% if messages %}
+          {% for category, message in messages %}
+          {% if category == "error" %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+          {% else %}
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              {{ message }}
+              <button type="button" class="close" data-dismiss="alert">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          {% endif %}
+          {% endfor %}
+      {% endif %}
+    {% endwith %} -->
+    <header class="highlight-box">
+      <h1>TaskFlowPro</h1>
+    </header>
+    
+    <div class="wrapper">
+      
+      <div class="welcoming">Create a new task</div>
+      <form action="/create_task", method="POST">
+
+    <div class="row">
+      <label for="title" class="above-input">Title</label>
+      <input type="text" id="title" name="title" placeholder="Enter the title of your task" required>
+    </div>
+        
+    <div class="row">
+      <label for="date" class="above-input">Due date</label>
+      <input type="date" id="dueDate" name="dueDate" placeholder="Enter Password" required>
+    </div>
+  
+    
+      
+    <div class="row">
+      <input type="submit" value="Create task">
+    </div>
+
+      </form>
+
+    </div>
+
+  </body>
+
+</html>
