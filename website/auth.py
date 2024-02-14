@@ -37,7 +37,6 @@ def signup_page():
         password = request.form.get("password")
         confirmPassword = request.form.get("confirmPassword")
 
-        # user = current_app.db.session.query(current_app.User).filter_by(email=email).first()
         user = User.query.filter_by(email=email).first()
         if user:
             flash("Email already exists", category="error")
