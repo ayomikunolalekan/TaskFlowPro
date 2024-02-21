@@ -1,88 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dashboard.com</title>
-
-</head>
-
-<body>
-  <header class="highlight-box">
-    <h1>TaskFlowPro</h1>
-  </header>
-
-
-<div class="wrapper">
-  <div class="container">
-  <div class="sidenav">
-    <ul>
-      <li><a href="" class="dash">Dashboard</a></li>
-      <li><a href="" class="history">History</a></li>
-      <li><a href="" class="signout">Sign out</a></li>
-  </ul>
-
-  </div>
-  <div class="mainnav">
-
-    <div class="box-group">
-      <div class="info-box">
-        <p class="comp">All Task</p>
-        <p class="num">30</p>
-      </div>
-  
-      <div class="info-box">
-        <p class="comp">Completed Task</p>
-        <p class="num">30</p>
-      </div>
-  
-      <div class="info-box">
-        <p class="comp">Uncompleted Task</p>
-        <p class="num">30</p>
-      </div>
-      
-    </div>
-
-
-    <div class="task-group">
-      <h2> Task list overview  <span><input type="button" value="view all" class="btn"></span></h2> 
-
-    </div>
-
-
-
-
-  </div>
-
-
-
-
-
-  </div>
-</div>
-
-
-
-<style>
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-*{
+ *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
     font-family: 'Poppins',sans-serif;
-}
+    }
 
 html,body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
-
     height: 100%;
-
     background: rgb(245, 244, 244);
-}
+    }
 
 .highlight-box {
     background-color: #2A7FFF;
@@ -90,38 +21,38 @@ html,body {
     padding: 15px; 
     text-align: center; 
 
-}
+    }
 
 .highlight-box h1 {
     margin: 0;
     font-size: 20px;
     margin-bottom: 10px;
-}
+    }
 
-  .wrapper{
+.wrapper{
     margin: 0 auto;
     width:100%;
-  
-  }
-  
-  .container{
+
+    }
+
+.container{
     display: flex;
     padding: 5px;
     width:100%;
     margin: 0 auto;
     
-  }
-  
-  .sidenav {
+    }
+
+.sidenav {
     width: 10%;
     height:430px;
     background-color: rgb(0, 145, 255);
     margin:30px;
     overflow: hidden;
     border-radius: 5px;
-  }
+    }
 
-  .sidenav a, li {
+.sidenav a, li {
     text-decoration: none;
     color: #fff;
     line-height: 2.5;
@@ -130,9 +61,9 @@ html,body {
     list-style-type: none;
     opacity: 0.15s;
     cursor: pointer;
-  }
-  
-  .sidenav a:hover{
+    }
+
+.sidenav a:hover{
     background-color: #ededed;
     color: #2A7FFF;
     opacity: 0.8;
@@ -141,21 +72,21 @@ html,body {
 
 .sidenav a:active {
     opacity: 0.5;
-}
+    }
 
-  .mainnav{
+.mainnav{
     margin: 20px;
     width: 70%;
     justify-content: space-between;
     margin-top:70px;
-  
-  }
-  
-  .box-group{
+
+    }
+
+.box-group{
     display: flex;
     justify-content: space-between;
-  }
-  .info-box {
+    }
+.info-box {
     height:125px;
     width:20%;
     background-color: #cee2ff;
@@ -163,51 +94,32 @@ html,body {
     border-radius: 8px;
     justify-content: left;
 
-  }
+    }
 
-  .info-box p {
+.info-box p {
     padding: 7px;
-  }
+    }
 
-  .comp {
+.comp {
     margin-top: 5px;
     margin-left: 8px;
     font-weight: 500;
     font-size: 16px;
     margin-top: 7px;
-  }
+    }
 
-  .num {
+.num {
     font-size: 40px;
     font-weight: 500;
     margin-top: 0;
     margin-left: 8px;
-  }
+    }
 
-  
-  .task-group{
+
+.task-group{
     display:block;
-  }
-  
-  .task-group h2{
+    }
+
+.task-group h2{
     justify-content: space-between;
-  }
-  </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
-</html>
+    }
