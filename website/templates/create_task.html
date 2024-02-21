@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form</title>
-    <link rel="stylesheet" href="../static/log_in.css">
+    <title>Create Task form</title>
+    <link rel="stylesheet" href="{{ url_for('static',  filename='css/create_task.css') }}">
   </head>
   <body>
     <!-- {% with messages = get_flashed_messages(with_categories = true)%}
@@ -34,38 +34,34 @@
     
     <div class="wrapper">
       
-      <div class="welcoming">Welcome back, Sign in</div>
-      <form action="/login" method="post">
+      <div class="welcoming">Create a new task</div>
+      <form action="/create_task", method="POST">
 
-        <div class="row">
-          <label for="text" class="above-input">Email</label>
-          <input type="text" id="text" name="email" placeholder="Enter Email or Phone" required>
-        </div>
-            
-        <div class="row">
-          <label for="password" class="above-input">Password</label>
-          <input type="password" id="password" name="password" placeholder="Enter Password" required>
-        </div>
+    <div class="row">
+      <label for="title" class="above-input">Title</label>
+      <input type="text" id="title" name="title" placeholder="Enter the title of your task" required>
+    </div>
+        
+    <div class="row">
+      <label for="date" class="above-input">Start date</label>
+      <input type="datetime-local" id="startDate" name="startDate" placeholder="Enter the day you want to begin the task" required>
+    </div>
+
+    <div class="row">
+      <label for="date" class="above-input">Due date</label>
+      <input type="datetime-local" id="dueDate" name="dueDate" placeholder="Enter the due date for your task" required>
+    </div>
+  
+    
       
     <div class="row">
-      <div class="pass"><a href="#">Forget Password</a></div>
-    
-      <input type="submit" value="Sign in">
-
+      <input type="submit" value="Create task">
     </div>
 
-    <div class="open">
-      Don't have an account yet? <span>Sign Up</span>
-    </div>
       </form>
 
-        <div class="open">
-          Don't have an account yet? <a href="/signup"><span>Sign Up</span></a>
-        </div>
-        </form>
+    </div>
 
-        </div>
+  </body>
 
-      </body>
-
-    </html>
+</html>
