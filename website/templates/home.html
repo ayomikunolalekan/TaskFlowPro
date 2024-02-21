@@ -1,11 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      display: flex;
+    }
+
+    .sidebar {
+      background-color: #343a40;
+      color: #adb5bd;
+      width: 250px;
+      padding-top: 20px;
+    }
+
+    .sidebar h1 {
+      color: #fff;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+      margin-top: 30px;
+    }
+
+    .sidebar ul li {
+      margin-bottom: 15px;
+    }
+
+    .sidebar ul li a {
+      color: #adb5bd;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .sidebar ul li a:hover {
+      background-color: #495057;
+    }
+
+    .sidebar ul li a i {
+      margin-right: 10px;
+    }
+
+    .content {
+      flex: 1;
+      padding: 20px;
+    }
+
+    header {
+      background-color: #495057;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+      border-radius: 0 0 10px 10px;
+    }
+
+    footer {
+      background-color: #343a40;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      border-radius: 10px 10px 0 0;
+    }
+  </style>
 </head>
 <body>
-    <h1>TaskFloPro</h1>
+
+  <div class="sidebar">
+    <h1>Dashboard</h1>
+    <ul>
+      <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#"><i class="fas fa-chart-bar"></i> Analytics</a></li>
+      <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+      <li><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <header>
+      <h1>Welcome to Your Dashboard</h1>
+    </header>
+
+    <main>
+      <p>This is the main content area where you can display various widgets, charts, and data.</p>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Your Dashboard</p>
+    </footer>
+  </div>
+
 </body>
 </html>

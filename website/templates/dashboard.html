@@ -4,26 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dashboard.com</title>
-    <link rel="stylesheet" href="{{ url_for('static',  filename='css/dashboard.css') }}">
+    <link rel="stylesheet" href="../static/dashboard.css">
 </head>
+
 <body>
+    <header class="highlight-box">
+        <h1>TaskFlowPro</h1>
+    </header>
+
+
+<div class="wrapper">
+    <div class="container">
+    <div class="sidenav">
+    <ul class="das">
+        <li class="list"><a href="" class="dash">Dashboard</a></li>
+        <li class="list"><a href="" class="history">Active Task</a></li>
+        <li class="list"><a href="" class="signout">Completed Task</a></li>
+    </ul>
+
+    <ul class="dasb">
+        <li class="list"><a href="" class="signout">Sign Out</a></li>
+    </ul>
+
+    </div>
+<div class="mainnav">
+
+    <div class="box-group">
+    <div class="info-box">
+        <p class="comp">All Task</p>
+        <p class="num">30</p>
+    </div>
+
+    <div class="info-box">
+        <p class="comp">Completed Task</p>
+        <p class="num">30</p>
+    </div>
+
+    <div class="info-box">
+        <p class="comp">Uncompleted Task</p>
+        <p class="num">30</p>
+    </div>
+    </div>
+
+
+    <div class="task-group">
+        <h3> OverDue Task <span><input type="button" value="view all" class="btn"></span></h3> 
+
+    </div>
+
+    <div class="task-list">
+        <div class="task">
+            <ul class="task-details">
+                <li>Task 1 <span class="date">15/01/2014</span></li>
+            </ul>
+        </div>
+
+        <div class="task">
+            <ul class="task-details">
+                <li>Task 2 <span class="date">15/01/2014</span></li>
+            </ul>
+        </div>
+
+        <div class="task">
+            <ul class="task-details">
+                <li>Task 3 <span class="date">15/01/2014</span></li>
+            </ul>
+        </div>
+    </div>
+    
+
+    <div class="task-group">
+        <h3> Today's Task <span><input type="button" value="view all" class="btn"></span></h3> 
+
+    </div>
+
+    <div class="task-list">
+        <div class="task">
+            <ul class="task-details">
+                <li>Task 1 <span class="date">15/01/2014</span></li>
+            </ul>
+        </div>
+
+        <div class="task">
+            <ul class="task-details">
+                <li>Task 2 <span class="date">15/01/2014</span></li>
+            </ul>
+        </div>
+
+        <div class="task">
+            <ul class="task-details">
+                <li>Task 3 <span class="date">15/01/2014</span></li>
+            </ul>
+        </div>
+    </div>
     
 
 
-<nav>
-    <ul class="flex-container">
-        <li><a href="/">Home</a></li>
-        <li><a href="About.html">About</a></li>
-        <li><a href="Service.html">Service</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="sign_up.html">Contact</a></li>
-    </ul>
-</nav>
 
+    </div>
 
-<Label class="lab">Dashboard</Label>
-
-
-
+    </div>
+</div>
 </body>
 </html>

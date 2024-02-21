@@ -4,30 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form</title>
-    <link rel="stylesheet" href="{{ url_for('static',  filename='css/log_in.css') }}">
+    <link rel="stylesheet" href="../static/log_in.css">
   </head>
   <body>
-    <!-- {% with messages = get_flashed_messages(with_categories = true)%}
-      {% if messages %}
-          {% for category, message in messages %}
-          {% if category == "error" %}
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                {{ message }}
-                <button type="button" class="close" data-dismiss="alert">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-          {% else %}
-          <div class="alert alert-danger alert-dismissible fade show" role="alert">
-              {{ message }}
-              <button type="button" class="close" data-dismiss="alert">
-                  <span aria-hidden="true">&times;</span>
-              </button>
-          </div>
-          {% endif %}
-          {% endfor %}
-      {% endif %}
-    {% endwith %} -->
     <header class="highlight-box">
       <h1>TaskFlowPro</h1>
     </header>
@@ -51,11 +30,13 @@
       
     <div class="row">
       <div class="pass"><a href="#">Forget Password</a></div>
+    
       <input type="submit" value="Sign in">
+
     </div>
 
     <div class="open">
-      Don't have an account yet? <a href="/signup"><span>Sign Up</span></a>
+      Don't have an account yet? <span>Sign Up</span>
     </div>
       </form>
 

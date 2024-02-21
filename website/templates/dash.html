@@ -1,3 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboard.com</title>
+
+</head>
+
+<body>
+  <header class="highlight-box">
+    <h1>TaskFlowPro</h1>
+  </header>
+
+
+<div class="wrapper">
+  <div class="container">
+  <div class="sidenav">
+    <ul>
+      <li><a href="" class="dash">Dashboard</a></li>
+      <li><a href="" class="history">History</a></li>
+      <li><a href="" class="signout">Sign out</a></li>
+  </ul>
+
+  </div>
+  <div class="mainnav">
+
+    <div class="box-group">
+      <div class="info-box">
+        <p class="comp">All Task</p>
+        <p class="num">30</p>
+      </div>
+  
+      <div class="info-box">
+        <p class="comp">Completed Task</p>
+        <p class="num">30</p>
+      </div>
+  
+      <div class="info-box">
+        <p class="comp">Uncompleted Task</p>
+        <p class="num">30</p>
+      </div>
+      
+    </div>
+
+
+    <div class="task-group">
+      <h2> Task list overview  <span><input type="button" value="view all" class="btn"></span></h2> 
+
+    </div>
+
+
+
+
+  </div>
+
+
+
+
+
+  </div>
+</div>
+
+
+
+<style>
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 *{
     margin: 0;
@@ -54,13 +121,7 @@ html,body {
     border-radius: 5px;
   }
 
-  .sidenav ul {
-    padding: 0;
-    margin: 0;
-}
-
-
-  .sidenav a, .list {
+  .sidenav a, li {
     text-decoration: none;
     color: #fff;
     line-height: 2.5;
@@ -69,8 +130,6 @@ html,body {
     list-style-type: none;
     opacity: 0.15s;
     cursor: pointer;
-    margin-bottom: 10px;
-    display: block;
   }
   
   .sidenav a:hover{
@@ -84,11 +143,6 @@ html,body {
     opacity: 0.5;
 }
 
-
-.signout {
-  margin-bottom: 90px;
-}
-  
   .mainnav{
     margin: 20px;
     width: 70%;
@@ -133,57 +187,27 @@ html,body {
   
   .task-group{
     display:block;
-    padding: 15px 3px 15px 3px;
-    margin-top: 40px; 
-    overflow: hidden;
   }
   
   .task-group h2{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 200;  
-  }
-
-  .btn {
-    float: right;
-    background-color: #2A7FFF;
-    color: #fff;
-    font-size: 14px;
-    border: none;
-    width: 72px;
-    height: 36px;
-    border-radius: 3px;
-    cursor: pointer;
-  }
-
-  
-
-  .task {
-    display: block;
-    background-color: #D9D9D9;
-    height: 40px;
-    margin-bottom: 20px;
-    border-radius: 3px;
-    
-  }
-
-
-  .task-details {
-    padding: 7px 3px 7px 3px;
-    color: black;
-    font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-left: 30px;
-    
-  }
-
-  .date {
-    float: right;
-    margin-right: 12px;
-  }
-
-
-  .sidenav {
     justify-content: space-between;
-    flex-direction: column;
-    display: flex ;
   }
+  </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
