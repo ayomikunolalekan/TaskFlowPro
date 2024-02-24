@@ -23,7 +23,7 @@
     </ul>
 
     <ul class="dasb">
-        <li class="list"><a href="" class="signout">Sign Out</a></li>
+        <li class="list"><a href="/logout" class="signout">Sign Out</a></li>
     </ul>
 
     </div>
@@ -47,7 +47,7 @@
     </div>
 
 
-    <div class="task-group">
+    <!-- <div class="task-group">
         <h3> OverDue Task <span><input type="button" value="view all" class="btn"></span></h3> 
 
     </div>
@@ -96,10 +96,29 @@
                 <li>Task 3 <span class="date">15/01/2014</span></li>
             </ul>
         </div>
+    </div> 
+    -->
+
+
+
+
+    <div class="task-group">
+        <h3>Upcoming Tasks <span><a href="/create_task"><input type="button" value="Create a new task" class="btn"></a></span></h3>
     </div>
+
+    <div class="task-list">
+        <div class="task">
+            <ul class="detail">
+                {% for task in user.tasks %}
+                <li class="task-details"><span class="task-wrapper">{{ task.title}}<span class="date">To start: {{ task.start}}</span></span></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+
     
-
-
+    
 
     </div>
 
@@ -107,3 +126,8 @@
 </div>
 </body>
 </html>
+
+
+
+
+
