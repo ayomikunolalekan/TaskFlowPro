@@ -40,6 +40,36 @@ def create_task():
             return redirect(url_for("views.dashboard_page"))
     return render_template("create_task.html", user=current_user)
 
+@views.route("/edit_task/<id>" , methods = ["GET","POST"])
+@login_required
+def edit_task(id):
+    task = Task.query.filter_by(id=id).first()
+
+    if not task:
+        flash("Task does not exist", category="error")
+    elif request.method == "POST":
+        title = request.form.get("title")
+        start_date = request.form.get("startDate")
+        due_date = request.form.get("dueDate")
+        # Start date conversion
+        start_date = start_date.replace('T', ' ')
+        start_date = datetime.strptime(start_date, '%Y-%m-%d %H:%M')
+
+        # Due date conversion
+        due_date = due_date.replace('T', ' ')
+        due_date = datetime.strptime(due_date, '%Y-%m-%d %H:%M')
+
+        #update task
+        task.title = title
+        task.start = start_date
+        task.end = due_date
+
+        db.session.add(task)
+        db.session.commit()
+        flash("Task updated!", category="success")
+        return redirect(url_for("views.dashboard_page"))
+    else:
+        return render_template("edit_task.html", task = task, task_url=f"/edit_task/{id}")
 
 @views.route("/delete_task/<id>")
 @login_required
