@@ -22,7 +22,7 @@ class User(db.Model, UserMixin):
 
 
 class Task(db.Model):
-    id = db.Column(db.Integer, primary_key= True, autoincrement=True)
+    id = db.Column(db.Integer, primary_key= True)
     title = db.Column(db.String(100), nullable= False)
     start = db.Column(db.DateTime, nullable= False)
     end = db.Column(db.DateTime, nullable= False)
