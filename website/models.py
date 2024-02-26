@@ -22,11 +22,12 @@ class User(db.Model, UserMixin):
 
 
 class Task(db.Model):
-    id = db.Column(db.Integer, primary_key= True)
+    id = db.Column(db.Integer, primary_key= True, autoincrement=True)
     title = db.Column(db.String(100), nullable= False)
     start = db.Column(db.DateTime, nullable= False)
     end = db.Column(db.DateTime, nullable= False)
     status = db.Column(db.String(100), nullable= False)
+    today = db.Column(db.DateTime, default=datetime.datetime.now())
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable= False)
 
     def __init__(self, title, start, end, status, user_id):
