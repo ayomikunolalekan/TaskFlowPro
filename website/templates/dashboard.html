@@ -48,10 +48,8 @@
         <p class="num">
             {% set completed_tasks = [] %}
 
-            {% for task in user.tasks %}
-                {% if task.status == "completed" %}
-                    {% set _ = completed_tasks.append(task) %}
-                {% endif %}
+            {% for task in user.complete_tasks %}
+                {% set _ = completed_tasks.append(task) %}
             {% endfor %}
 
             {{ completed_tasks|length }}
@@ -64,9 +62,7 @@
             {% set uncompleted_tasks = [] %}
 
             {% for task in user.tasks %}
-                {% if task.status == "uncompleted" %}
-                    {% set _ = uncompleted_tasks.append(task) %}
-                {% endif %}
+                {% set _ = uncompleted_tasks.append(task) %}
             {% endfor %}
 
             {{ uncompleted_tasks|length }}
