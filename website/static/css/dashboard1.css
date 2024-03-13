@@ -20,7 +20,7 @@ html,body {
     color: #fff; 
     padding: 15px; 
     text-align: center; 
-
+    position: relative;
     }
 
 .highlight-box h1 {
@@ -29,11 +29,31 @@ html,body {
     margin-bottom: 10px;
     }
 
+    header button{
+        background-color: none;
+        border:none;
+    }
+
 .wrapper{
     margin: 0 auto;
     width:100%;
-
+    
     }
+
+    /* .highlight-box input[type="checkbox"] {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        display: none;
+    }
+
+    .highlight-box label {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    } */
 
 .container{
     display: flex;
@@ -144,7 +164,7 @@ html,body {
     display: block;    
     margin-bottom: 30px;
     color: black;
-    padding: 3px 7px 3px 70px;
+    padding: 3px 7px 3px 7px;
     }
 
 .task-wrapper{
@@ -175,5 +195,170 @@ html,body {
     cursor: pointer;
 } 
 
+.checkbtn {
+    font-size: 30px;
+    color: #fff;
+    float: left;
+    line-height: 45px;
+    margin-left: 15px;
+    cursor: pointer;
+    display: none;
 
+}
+
+#check{
+    display: none;
+}
+
+/* @media only screen and (max-width: 768px) {
+    .sidenav {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+        position: relative;
+    }
+
+    .highlight-box input[type="checkbox"] {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        display: none;
+    }
+
+    .highlight-box label {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+}
+ */
+
+
+@media only screen and (max-width: 952px) {
+    h1.logo{
+        font-size: 30px;
+        padding-right: 50px;
+    }
+
+    .sidenav {
+        font-size: 16px;
+    }
+
+}
+
+@media only screen and (max-width: 1150px) {
+    .checkbtn{
+        display: block;
+    }
+
+    li.task-details{
+        padding: 3px 3px 3px 3px;
+    }
+
+    .detail li{
+        padding: 3px 7px 3px 7px;
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        
+    
+    }
+
+    /* ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: white;
+        top: 80px;
+        left: 0;
+        text-align: center;
+    } */
+
+    div ul li a{
+        font-size: 20px;
+    }
+
+    .sidenav {
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        margin: 0;
+        text-align: center;
+        background: #2c3e50;
+        transition: all .5s;
+    }
+
+    div ul li {
+        display: block;margin: 30px 0;
+        line-height: 30px;
+    }
+    div ul li a{
+        font-size: 20px;
+    }
+
+    /* ul li a:hover,a.active{
+        background: none;
+        color: pink;
+    } */
+    .mainnav{
+        width:100%;
+    }
+    .sidenav a, li{
+        padding: 18px;
+    }
+
+    .sidenav a:hover, .sidenav a:active{
+        background: none;
+        color: #2A7FFF;
+    }
+    
+    .box-group {
+        flex-direction: column;
+        justify-content: center;
+        display: flex;
+        margin: 0 auto;
+        align-items: center;
+        width:100%;
+    }
+    .info-box {
+        width: 100%;
+        margin-bottom: 10px; /* Adjust this value as needed */
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+@media only screen and (max-width: 360px){
+    .task-group{
+        display:block;
+        margin-top: 40px;
+        margin-bottom: 35px;
+        }
+    
+    .task-group h3{
+        justify-content: space-between;
+        font-size: 16px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+}
+
+
+@media only screen and (max-width: 1149px){
+    .sidenav {
+        width: 100%;
+        height: 120vh;
+        position: fixed;
+        top: 70px;
+        
+    }
+}
 

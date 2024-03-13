@@ -99,3 +99,20 @@ input[type="submit"] {
   color: black;
 }
 
+@media only screen and (max-width: 450px){
+  .wrapper{
+    padding: 20px; 
+    width: 350px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media only screen and (max-width: 450px){
+  .wrapper{
+    padding: 20px; 
+    width: 285px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+}

@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlowPro Dashboard</title>
+    <!-- <link rel="stylesheet" href="../static/css/dashboard1.css"> -->
+</head>
+
+<body>
+    <header class="highlight-box">
+        <h1>TaskFlowPro</h1>
+    </header>
+
+
+<div class="wrapper">
+    <div class="container">
+    <div class="sidenav">
+    <ul class="das">
+        <li class="list"><a href="/" class="dash">Dashboard</a></li>
+        <li class="list"><a href="" class="history">Active Task</a></li>
+        <li class="list"><a href="" class="signout">Completed Task</a></li>
+    </ul>
+
+    <ul class="dasb">
+        <li class="list"><a href="/logout" class="signout">Sign Out</a></li>
+    </ul>
+
+    </div>
+<div class="mainnav">
+
+    <di3v class="box-group">
+    <div class="info-box">
+        <p class="comp">All Task</p>
+        <p class="num">30</p>
+    </div>
+
+    <div class="info-box">
+        <p class="comp">Completed Task</p>
+        <p class="num">30</p>
+    </div>
+
+    <div class="info-box">
+        <p class="comp">Uncompleted Task</p>
+        <p class="num">30</p>
+    </div>
+    </di3v>
+
+
+    <div class="task-group">
+        <h3>Upcoming Tasks <span><a href="/create_task"><input type="button" value="Create a new task" class="btn"></a></span></h3>
+    </div>
+
+    <div class="task-list">
+        <div class="task">
+            <ul class="detail">
+                {% for task in user.tasks %}
+                <li class="task-details"><span class="task-wrapper">{{ task.title}}<span class="date">To start: {{ task.start}}</span></span></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+
+    
+    
+
+    </div>
+
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins',sans-serif;
+    }
+
+    /* @media only screen and (max-width: 768px) {
+        .container {
+            flex-direction: column;
+        } */
+
+        .sidenav,
+        .mainnav {
+            width: 100%;
+            margin: 0;
+        }
+
+
+html,body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: rgb(245, 244, 244);
+    }
+
+.highlight-box {
+    background-color: #2A7FFF;
+    color: #fff; 
+    padding: 15px; 
+    text-align: center; 
+
+    }
+
+.highlight-box h1 {
+    margin: 0;
+    font-size: 20px;
+    margin-bottom: 10px;
+    }
+
+.wrapper{
+    margin: 0 auto;
+    width:100%;
+
+    }
+
+.container{
+    display: flex;
+    padding: 5px;
+    width:100%;
+    margin: 0 auto;
+    
+    }
+
+.sidenav {
+    width: 10%;
+    height:430px;
+    background-color: rgb(0, 145, 255);
+    margin:30px;
+    overflow: hidden;
+    border-radius: 5px;
+    }
+
+.sidenav a, li {
+    text-decoration: none;
+    color: #fff;
+    line-height: 2.5;
+    padding-left: 7px;
+    padding-top: 7px;
+    list-style-type: none;
+    opacity: 0.15s;
+    cursor: pointer;
+    }
+
+.sidenav a:hover{
+    background-color: #ededed;
+    color: #2A7FFF;
+    opacity: 0.8;
+
+}
+
+.sidenav a:active {
+    opacity: 0.5;
+    }
+
+.mainnav{
+    margin: 20px;
+    width: 70%;
+    justify-content: space-between;
+    margin-top:70px;
+
+    }
+
+.box-group{
+    display: flex;
+    justify-content: space-between;
+    }
+.info-box {
+    height:125px;
+    width:20%;
+    background-color: #cee2ff;
+    border: none;
+    border-radius: 8px;
+    justify-content: left;
+
+    }
+
+.info-box p {
+    padding: 7px;
+    }
+
+.comp {
+    margin-top: 5px;
+    margin-left: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    margin-top: 7px;
+    }
+
+.num {
+    font-size: 40px;
+    font-weight: 500;
+    margin-top: 0;
+    margin-left: 8px;
+    }
+
+.task-list {
+    color: black;
+}
+
+.task-group{
+    display:block;
+    margin-top: 40px;
+    margin-bottom: 35px;
+    }
+
+.task-group h3{
+    justify-content: space-between;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+.detail li{
+    padding: 3px 7px 3px 7px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19px;
+
+}
+.task-details{
+    background-color: #D9D9D9;
+    height: 50px;
+    display: block;    
+    margin-bottom: 30px;
+    color: black;
+    padding: 3px 7px 3px 70px;
+    }
+
+.task-wrapper{
+    padding:0px 40px 0px 40px;
+    justify-content: space-between;
+    display: flex;
+}
+    
+/* .task-details{
+        padding: 7px 3px 7px 3px;
+        color: black;
+        font-size: 16px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 30px;
+    } */
+    
+
+.btn {
+    background-color: #2A7FFF;
+    border: none;
+    color: #fff;
+    padding: 3px;
+    height: 32px;
+    width: 150px;
+    float: right;
+    border-radius: 3px;
+    font-size: 14px;
+    cursor: pointer;
+} 
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlowPro Dashboard</title>
+    <link rel="stylesheet" href="../static/css/dashboard1.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-ez5A1ErOScN7BMbNB8p3zOMWSxhLQeOGWzJ0jDRg/qOHSxIPI8vE9pR4x1L2J2s5" crossorigin="anonymous">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <header class="highlight-box">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+        <i class="fa fa-bars"></i> 
+        </label>
+        <h1 class="logo">TaskFlowPro</h1>
+    </header>
+
+
+<div class="wrapper">
+    <div class="container">
+    <div class="sidenav">
+    <ul class="das">
+        <li class="list"><a href="/" class="dash">Dashboard</a></li>
+        <li class="list"><a href="../templates/active_tasks.html" class="history">Active Task</a></li>
+        <li class="list"><a href="../templates/completed_task.html" class="signout">Completed Task</a></li>
+    </ul>
+
+    <ul class="dasb">
+        <li class="list"><a href="/logout" class="signout">Sign Out</a></li>
+    </ul>
+
+    </div>
+<div class="mainnav">
+
+    <div class="box-group">
+    <div class="info-box">
+        <p class="comp">All Task</p>
+        <p class="num">30</p>
+    </div>
+
+    <div class="info-box">
+        <p class="comp">Completed Task</p>
+        <p class="num">30</p>
+    </div>
+
+    <div class="info-box">
+        <p class="comp">Uncompleted Task</p>
+        <p class="num">30</p>
+    </div>
+    </div>
+
+
+    <div class="task-group">
+        <h3>Upcoming Tasks <span><a href="/create_task"><input type="button" value="Create a new task" class="btn"></a></span></h3>
+    </div>
+
+    <div class="task-list">
+        <div class="task">
+            <ul class="detail">
+                {% for task in user.tasks %}
+                <li class="task-details"><span class="task-wrapper">{{ task.title}}<span class="date">To start: {{ task.start}}</span></span></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+
+
+    
+
+    </div>
+
+    </div>
+</div>
+<!-- <script src="../static/js/dashboard.js"></script> -->
+
+<!-- <input type="checkbox" id="check">
+<label for="check" class="checkbtn">
+    <i class="fa fa-bars"></i> 
+</label> -->
+
+<script>
+    const checkbox = document.getElementById('check');
+    const sidenav = document.querySelector('.sidenav');
+
+    checkbox.addEventListener('change', function() {
+        if (this.checked) {
+            sidenav.style.left = '0';
+        } else {
+            sidenav.style.left = '-100%';
+        }
+    });
+
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins',sans-serif;
+    }
+
+html,body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: rgb(245, 244, 244);
+    }
+
+.highlight-box {
+    background-color: #2A7FFF;
+    color: #fff; 
+    padding: 15px; 
+    text-align: center; 
+    position: relative;
+    }
+
+.highlight-box h1 {
+    margin: 0;
+    font-size: 20px;
+    margin-bottom: 10px;
+    }
+
+    header button{
+        background-color: none;
+        border:none;
+    }
+
+.wrapper{
+    margin: 0 auto;
+    width:100%;
+    
+    }
+
+    /* .highlight-box input[type="checkbox"] {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        display: none;
+    }
+
+    .highlight-box label {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    } */
+
+.container{
+    display: flex;
+    padding: 5px;
+    width:100%;
+    margin: 0 auto;
+    
+    }
+
+.sidenav {
+    width: 10%;
+    height:430px;
+    background-color: rgb(0, 145, 255);
+    margin:30px;
+    overflow: hidden;
+    border-radius: 5px;
+    }
+
+.sidenav a, li {
+    text-decoration: none;
+    color: #fff;
+    line-height: 2.5;
+    padding-left: 7px;
+    padding-top: 7px;
+    list-style-type: none;
+    opacity: 0.15s;
+    cursor: pointer;
+    }
+
+.sidenav a:hover{
+    background-color: #ededed;
+    color: #2A7FFF;
+    opacity: 0.8;
+
+}
+
+.sidenav a:active {
+    opacity: 0.5;
+    }
+
+.mainnav{
+    margin: 20px;
+    width: 70%;
+    justify-content: space-between;
+    margin-top:70px;
+
+    }
+
+.box-group{
+    display: flex;
+    justify-content: space-between;
+    }
+.info-box {
+    height:125px;
+    width:20%;
+    background-color: #cee2ff;
+    border: none;
+    border-radius: 8px;
+    justify-content: left;
+
+    }
+
+.info-box p {
+    padding: 7px;
+    }
+
+.comp {
+    margin-top: 5px;
+    margin-left: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    margin-top: 7px;
+    }
+
+.num {
+    font-size: 40px;
+    font-weight: 500;
+    margin-top: 0;
+    margin-left: 8px;
+    }
+
+.task-list {
+    color: black;
+}
+
+.task-group{
+    display:block;
+    margin-top: 40px;
+    margin-bottom: 35px;
+    }
+
+.task-group h3{
+    justify-content: space-between;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+.detail li{
+    padding: 3px 7px 3px 7px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19px;
+
+}
+.task-details{
+    background-color: #D9D9D9;
+    height: 50px;
+    display: block;    
+    margin-bottom: 30px;
+    color: black;
+    padding: 3px 7px 3px 7px;
+    }
+
+.task-wrapper{
+    padding:0px 40px 0px 40px;
+    justify-content: space-between;
+    display: flex;
+}
+    
+/* .task-details{
+        padding: 7px 3px 7px 3px;
+        color: black;
+        font-size: 16px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 30px;
+    } */
+    
+
+.btn {
+    background-color: #2A7FFF;
+    border: none;
+    color: #fff;
+    padding: 3px;
+    height: 32px;
+    width: 150px;
+    float: right;
+    border-radius: 3px;
+    font-size: 14px;
+    cursor: pointer;
+} 
+
+.checkbtn {
+    font-size: 30px;
+    color: #fff;
+    float: left;
+    line-height: 45px;
+    margin-left: 15px;
+    cursor: pointer;
+    display: none;
+
+}
+
+#check{
+    display: none;
+}
+
+/* @media only screen and (max-width: 768px) {
+    .sidenav {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+        position: relative;
+    }
+
+    .highlight-box input[type="checkbox"] {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        display: none;
+    }
+
+    .highlight-box label {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+}
+ */
+
+
+@media only screen and (max-width: 952px) {
+    h1.logo{
+        font-size: 30px;
+        padding-right: 50px;
+    }
+
+    .sidenav {
+        font-size: 16px;
+    }
+
+}
+
+@media only screen and (max-width: 1150px) {
+    .checkbtn{
+        display: block;
+    }
+
+    li.task-details{
+        padding: 3px 3px 3px 3px;
+    }
+
+    .detail li{
+        padding: 3px 7px 3px 7px;
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        
+    
+    }
+
+    /* ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: white;
+        top: 80px;
+        left: 0;
+        text-align: center;
+    } */
+
+    div ul li a{
+        font-size: 20px;
+    }
+
+    .sidenav {
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        margin: 0;
+        text-align: center;
+        background: #2c3e50;
+        transition: all .5s;
+    }
+
+    div ul li {
+        display: block;margin: 30px 0;
+        line-height: 30px;
+    }
+    div ul li a{
+        font-size: 20px;
+    }
+
+    /* ul li a:hover,a.active{
+        background: none;
+        color: pink;
+    } */
+    .mainnav{
+        width:100%;
+    }
+    .sidenav a, li{
+        padding: 18px;
+    }
+
+    .sidenav a:hover, .sidenav a:active{
+        background: none;
+        color: #2A7FFF;
+    }
+    
+    .box-group {
+        flex-direction: column;
+        justify-content: center;
+        display: flex;
+        margin: 0 auto;
+        align-items: center;
+        width:100%;
+    }
+    .info-box {
+        width: 100%;
+        margin-bottom: 10px; /* Adjust this value as needed */
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+@media only screen and (max-width: 360px){
+    .task-group{
+        display:block;
+        margin-top: 40px;
+        margin-bottom: 35px;
+        }
+    
+    .task-group h3{
+        justify-content: space-between;
+        font-size: 16px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+}
+
+
+@media only screen and (max-width: 1149px){
+    .sidenav {
+        width: 100%;
+        height: 120vh;
+        position: fixed;
+        top: 70px;
+        
+    }
+}
+
+</style>

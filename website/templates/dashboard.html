@@ -5,11 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TaskFlowPro Dashboard</title>
     <link rel="stylesheet" href="../static/css/dashboard1.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-ez5A1ErOScN7BMbNB8p3zOMWSxhLQeOGWzJ0jDRg/qOHSxIPI8vE9pR4x1L2J2s5" crossorigin="anonymous">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body>
     <header class="highlight-box">
-        <h1>TaskFlowPro</h1>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+        <i class="fa fa-bars"></i> 
+        </label>
+        <h1 class="logo">TaskFlowPro</h1>
     </header>
 
 
@@ -18,8 +29,8 @@
     <div class="sidenav">
     <ul class="das">
         <li class="list"><a href="/" class="dash">Dashboard</a></li>
-        <li class="list"><a href="" class="history">Active Task</a></li>
-        <li class="list"><a href="" class="signout">Completed Task</a></li>
+        <li class="list"><a href="../templates/active_tasks.html" class="history">Active Task</a></li>
+        <li class="list"><a href="../templates/completed_task.html" class="signout">Completed Task</a></li>
     </ul>
 
     <ul class="dasb">
@@ -29,7 +40,7 @@
     </div>
 <div class="mainnav">
 
-    <di3v class="box-group">
+    <div class="box-group">
     <div class="info-box">
         <p class="comp">All Task</p>
         <p class="num">30</p>
@@ -44,7 +55,7 @@
         <p class="comp">Uncompleted Task</p>
         <p class="num">30</p>
     </div>
-    </di3v>
+    </div>
 
 
     <div class="task-group">
@@ -62,13 +73,35 @@
     </div>
 
 
-    
+
     
 
     </div>
 
     </div>
 </div>
+<!-- <script src="../static/js/dashboard.js"></script> -->
+
+<!-- <input type="checkbox" id="check">
+<label for="check" class="checkbtn">
+    <i class="fa fa-bars"></i> 
+</label> -->
+
+<script>
+    const checkbox = document.getElementById('check');
+    const sidenav = document.querySelector('.sidenav');
+
+    checkbox.addEventListener('change', function() {
+        if (this.checked) {
+            sidenav.style.left = '0';
+        } else {
+            sidenav.style.left = '-100%';
+        }
+    });
+
+</script>
+
+
 </body>
 </html>
 
