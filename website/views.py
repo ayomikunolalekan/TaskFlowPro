@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for
 from flask_login import login_required, current_user
-from .models import User, Task
+from .models import User, Task, CompletedTask
 from datetime import datetime
 from . import db
 
@@ -39,6 +39,27 @@ def create_task():
             flash("Task Created!", category="success")
             return redirect(url_for("views.dashboard_page"))
     return render_template("create_task.html", user=current_user)
+
+@views.route("/complete_task/<id>")
+@login_required
+def mark_as_completed(id):
+    task = Task.query.filter_by(id=id).first()
+
+    if not task:
+        flash("Task does not exist", category="error")
+    else:
+        task.status = "completed"
+
+        complete_task = CompletedTask(title=task.title, start=task.start, end=task.end, status="completed", user_id=current_user.id)
+        db.session.add(complete_task)
+        
+        # Remove the task from the Task table
+        db.session.delete(task)
+
+        db.session.commit()
+        flash("Completed Task !", category="success")
+
+    return redirect(url_for("views.dashboard_page"))
 
 @views.route("/edit_task/<id>" , methods = ["GET","POST"])
 @login_required

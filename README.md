@@ -9,3 +9,7 @@ A Task Manager which allows users to create, edit, view and delete their tasks.
 ### Note: How to handle potential errors while running/building the application
 After installing the dependencies and running the application, if you are being faced with an error, specifically either an import error or just an error in general, before trying out steps 2 and 3 of how to run or build the application, run this command: **pip uninstall -r requirements.txt**  
 After running the command, and all the dependencies/requirements have been uninstalled, you can now proceed to run the commands in steps 2 and 3 above.
+
+## Link to deployed site
+This is the link to our deployed site:  
+[TaskFlowPro](https://taskflowpro.onrender.com)

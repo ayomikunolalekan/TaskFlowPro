@@ -13,6 +13,7 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(128), unique=True, nullable=False)
     password = db.Column(db.String(64), nullable=False)
     tasks = db.relationship("Task", backref = "user",  lazy=True)
+    complete_tasks = db.relationship("CompletedTask", backref = "user",  lazy=True)
 
     def __init__  (self, first_name, last_name, email, password):
         self.first_name = first_name
@@ -22,6 +23,23 @@ class User(db.Model, UserMixin):
 
 
 class Task(db.Model):
+    id = db.Column(db.Integer, primary_key= True)
+    title = db.Column(db.String(100), nullable= False)
+    start = db.Column(db.DateTime, nullable= False)
+    end = db.Column(db.DateTime, nullable= False)
+    status = db.Column(db.String(100), nullable= False)
+    today = db.Column(db.DateTime, default=datetime.datetime.now())
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable= False)
+
+    def __init__(self, title, start, end, status, user_id):
+        self.title = title
+        self.start = start
+        self.end = end
+        self.status = status
+        self.user_id = user_id
+
+
+class CompletedTask(db.Model):
     id = db.Column(db.Integer, primary_key= True)
     title = db.Column(db.String(100), nullable= False)
     start = db.Column(db.DateTime, nullable= False)

@@ -43,17 +43,41 @@
     <div class="box-group">
     <div class="info-box">
         <p class="comp">All Task</p>
-        <p class="num">30</p>
+        <p class="num">
+            {% set all_tasks = [] %}
+
+            {% for task in user.tasks %}
+                {% set _ = all_tasks.append(task) %}
+            {% endfor %}
+
+            {{ all_tasks|length }}
+        </p>
     </div>
 
     <div class="info-box">
         <p class="comp">Completed Task</p>
-        <p class="num">30</p>
+        <p class="num">
+            {% set completed_tasks = [] %}
+
+            {% for task in user.complete_tasks %}
+                {% set _ = completed_tasks.append(task) %}
+            {% endfor %}
+
+            {{ completed_tasks|length }}
+        </p>
     </div>
 
     <div class="info-box">
         <p class="comp">Uncompleted Task</p>
-        <p class="num">30</p>
+        <p class="num">
+            {% set uncompleted_tasks = [] %}
+
+            {% for task in user.tasks %}
+                {% set _ = uncompleted_tasks.append(task) %}
+            {% endfor %}
+
+            {{ uncompleted_tasks|length }}
+        </p>
     </div>
     </div>
 
