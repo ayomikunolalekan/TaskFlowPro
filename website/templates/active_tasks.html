@@ -34,10 +34,12 @@
 
     <div class="box-group">
     <div class="info-box">
-        <p class="comp">Task 1<span><a href=""><input type="button" value="Edit" class="edit"></a></span></span></p>
-        <p class="num">Due 15/01/2024</p>
-        <div class="del"><button class="delete"><a href="">Delete</a></button><span></span><a href=""><input type="button" value="Mark as Complete" class="complete"></a></div>
-    </div>
+        {% for task in user.tasks %}
+            <p class="comp">{{ task.title }}<span><a href="/edit_task/{{task.id}}"><input type="button" value="Edit" class="edit"></a></span></span></p>
+            <p class="num">Due: {{ task.end }}</p>
+            <div class="del"><button class="delete"><a href="/delete_task/{{task.id}}">Delete</a></button><span></span><a href="/complete_task/{{task.id}}"><input type="button" value="Mark as Complete" class="complete"></a></div>
+        {% endfor %}
+        </div>
 
 
     </div>

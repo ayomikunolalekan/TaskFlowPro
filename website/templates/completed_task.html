@@ -18,8 +18,8 @@
     <div class="sidenav">
     <ul class="das">
         <li class="list"><a href="/" class="dash">Dashboard</a></li>
-        <li class="list"><a href="" class="history">Active Task</a></li>
-        <li class="list"><a href="" class="signout">Completed Task</a></li>
+        <li class="list"><a href="/active_task" class="history">Active Task</a></li>
+        <li class="list"><a href="/completed_task" class="signout">Completed Task</a></li>
     </ul>
 
     <ul class="dasb">
@@ -34,9 +34,11 @@
 
     <div class="box-group">
     <div class="info-box">
-        <p class="comp">Task 1</p>
-        <p class="num">Due 15/01/2024</p>
-        <input type="button" value="Delete" class="del" >
+        {% for task in user.complete_tasks %}
+            <p class="comp">{{ task.title }}</p>
+            <p class="num">Due: {{ task.end }}</p>
+            <a href="/delete_completed_task/{{task.id}}"><input type="button" value="Delete" class="del" ></a>
+        {% endfor %}
     </div>
 
 

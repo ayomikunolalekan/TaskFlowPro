@@ -6,10 +6,34 @@
     <title>Signup Form</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../static/css/sign_up.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
 
   </head>
   <body>
     <div class="container">
+      <!-- <div>
+        {% with messages = get_flashed_messages(with_categories = true)%}
+          {% if messages %}
+              {% for category, message in messages %}
+              {% if category == "error" %}
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+              {% else %}
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  {{ message }}
+                  <button type="button" class="btn-close" data-bs-dismiss="alert">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              {% endif %}
+              {% endfor %}
+          {% endif %}
+        {% endwith %}
+      </div> -->
       <h2 class="acct">Create an Account</h2>
       <form action="/signup" method="POST">
   

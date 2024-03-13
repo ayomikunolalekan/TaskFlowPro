@@ -13,6 +13,20 @@ def dashboard_page():
     tasks = Task.query.join(User).filter(User.email == current_user.email).all()
     return render_template("dashboard.html", user=current_user, tasks=tasks)
 
+
+@views.route("/active_task")
+@login_required
+def active_task():
+    tasks = Task.query.join(User).filter(User.email == current_user.email).all()
+    return render_template("active_tasks.html", user=current_user, tasks=tasks)
+
+
+@views.route("/completed_task")
+@login_required
+def completed_task():
+    tasks = Task.query.join(User).filter(User.email == current_user.email).all()
+    return render_template("completed_task.html", user=current_user, tasks=tasks)
+
 @views.route("/create_task", methods=["GET", "POST"])
 @login_required
 def create_task():
@@ -58,8 +72,8 @@ def mark_as_completed(id):
 
         db.session.commit()
         flash("Completed Task !", category="success")
-
-    return redirect(url_for("views.dashboard_page"))
+        return redirect(url_for("views.completed_task"))
+    
 
 @views.route("/edit_task/<id>" , methods = ["GET","POST"])
 @login_required
@@ -103,5 +117,18 @@ def delete_task(id):
         db.session.delete(task)
         db.session.commit()
     
-    return redirect(url_for("views.dashboard_page"))
+    return redirect(url_for("views.active_task"))
+
+@views.route("/delete_completed_task/<id>")
+@login_required
+def delete_completed_task(id):
+    task = CompletedTask.query.filter_by(id=id).first()
+
+    if not task:
+        flash("Task does not exist", category="error")
+    else:
+        db.session.delete(task)
+        db.session.commit()
+    
+    return redirect(url_for("views.completed_task"))
 
