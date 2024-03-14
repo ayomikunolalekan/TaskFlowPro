@@ -5,10 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TaskFlowPro Dashboard</title>
     <link rel="stylesheet" href="../static/css/completed_task.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body>
     <header class="highlight-box">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+        <i class="fa fa-bars"></i> 
+        </label>
         <h1>TaskFlowPro</h1>
     </header>
 
@@ -32,7 +38,7 @@
         <h3>Completed Tasks <span><a href="/create_task"><input type="button" value="Add New Task" class="btn"></a></span></h3>
     </div>
 
-    <div class="box-group">
+    <!-- <div class="box-group">
     <div class="info-box">
         {% for task in user.complete_tasks %}
             <p class="comp">{{ task.title }}</p>
@@ -42,8 +48,44 @@
     </div>
 
 
-    </div>
+    </div> -->
+
+    <div class="box-container">
+        {% for task in user.complete_tasks %}
+        <div class="info-box">   
+                <p class="comp">{{ task.title }}</p>
+                <p class="num">Due: {{ task.end }}</p>
+                <a href="/delete_completed_task/{{task.id}}"><input type="button" value="Delete" class="del" ></a>
+        </div>
+                    {% endfor %}
+        </div>
+            
+        </div>
+    
+    
+        </div>
+
+        
 
 </div>
 </div>
 </div>
+
+
+<script>
+    const checkbox = document.getElementById('check');
+    const sidenav = document.querySelector('.sidenav');
+
+    checkbox.addEventListener('change', function() {
+        if (this.checked) {
+            sidenav.style.left = '0';
+        } else {
+            sidenav.style.left = '-100%';
+        }
+    });
+
+</script>
+
+
+</body>
+</html>

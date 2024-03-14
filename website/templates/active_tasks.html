@@ -5,10 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TaskFlowPro Dashboard</title>
     <link rel="stylesheet" href="../static/css/active_tasks.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-ez5A1ErOScN7BMbNB8p3zOMWSxhLQeOGWzJ0jDRg/qOHSxIPI8vE9pR4x1L2J2s5" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body>
     <header class="highlight-box">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+        <i class="fa fa-bars"></i> 
+        </label>
         <h1>TaskFlowPro</h1>
     </header>
 
@@ -32,7 +41,7 @@
         <h3>Active Tasks <span><a href="/create_task"><input type="button" value="Add New Task" class="btn"></a></span></h3>
     </div>
 
-    <div class="box-group">
+    <!-- <div class="box-group">
     <div class="info-box">
         {% for task in user.tasks %}
             <p class="comp">{{ task.title }}<span><a href="/edit_task/{{task.id}}"><input type="button" value="Edit" class="edit"></a></span></span></p>
@@ -42,8 +51,39 @@
         </div>
 
 
+    </div> -->
+
+
+    <div class="box-container">
+        {% for task in user.tasks %}
+        <div class="info-box">
+            <p class="comp">{{ task.title }}<span><a href="/edit_task/{{task.id}}"><input type="button" value="Edit" class="edit"></a></span></span></p>
+            <p class="num">Due: {{ task.end }}</p>
+            <div class="del">
+            <button class="delete"><a href="/delete_task/{{task.id}}">Delete</a></button><span></span><a href="/complete_task/{{task.id}}"><input type="button" value="Mark as Complete" class="complete"></a></div>
+        </div>
+        {% endfor %}
     </div>
 
 </div>
 </div>
 </div>
+
+
+<script>
+    const checkbox = document.getElementById('check');
+    const sidenav = document.querySelector('.sidenav');
+
+    checkbox.addEventListener('change', function() {
+        if (this.checked) {
+            sidenav.style.left = '0';
+        } else {
+            sidenav.style.left = '-100%';
+        }
+    });
+
+</script>
+
+
+</body>
+</html>
